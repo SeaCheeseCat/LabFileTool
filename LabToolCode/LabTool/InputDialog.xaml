@@ -1,0 +1,21 @@
+﻿<Window x:Class="LabTool.InputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabTool"
+        mc:Ignorable="d"
+         Title="Input Dialog" Height="140" Width="300"
+        WindowStyle="None"
+        >
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Path:"/>
+            <TextBox x:Name="inputTextBox" Margin="0,5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+                <Button Content="OK" Width="75" Margin="0,0,5,0" Click="OKButton_Click"/>
+                <Button Content="Cancel" Width="75" Click="CancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

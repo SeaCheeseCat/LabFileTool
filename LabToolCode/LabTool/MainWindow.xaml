@@ -1,0 +1,52 @@
+﻿<Window x:Class="LabTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabTool"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="LabTool" Height="450" Width="800"
+        Icon="icon.png" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignBackground}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        >
+    <Grid>
+        <ProgressBar
+                Visibility="Hidden"
+                Name="progressbar"
+            IsIndeterminate="True"
+            Style="{StaticResource MaterialDesignCircularProgressBar}"
+            Value="50" Height="Auto" Margin="24,375,739.6,10" Width="Auto" />
+        <TreeView Name="filetree"
+                MinWidth="220" Margin="0,51,-0.4,0">
+        </TreeView>
+        <materialDesign:DialogHost x:Name="DialogHost">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel>
+                    <TextBlock Text="This is a dialog content" Margin="0 0 0 16"/>
+                    <Button Content="Open Web Page" Command="{Binding OpenWebPageCommand}" Margin="0 0 8 0"/>
+                    <Button Content="Close" Command="{Binding CloseDialogCommand}" Margin="0 0 0 0"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+        <Menu Margin="0,0,-0.4,369">
+            <MenuItem
+                    Header="_File">
+                <MenuItem
+                    Header="Refresh"
+                    Icon="{materialDesign:PackIcon Kind=Refresh}" Click="MenuItem_Click_1" />
+                <MenuItem
+                    Header="Edit"
+                    Command="{Binding RunDialogCommand}"
+                    Icon="{materialDesign:PackIcon Kind=CodeTags}" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem
+                    Header="Info" Command="{Binding OpenDialogCommand}">
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
