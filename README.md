@@ -13,7 +13,7 @@
 
 **LabTool的设计极为简单，就如同它的界面一样，它只为了传输文件而存在，没有任何多余的设计**
 
-![tool1](/Docdocument/tool1.png)
+![tool1](/Document/tool1.png)
 
 
 
